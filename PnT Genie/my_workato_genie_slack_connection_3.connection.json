@@ -1,0 +1,5 @@
+{
+  "name": "My Workato genie slack connection 3",
+  "provider": "workato_genie_slack",
+  "root_folder": false
+}

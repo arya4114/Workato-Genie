@@ -1,0 +1,14 @@
+{
+  "name": "Send Email to candidate",
+  "trigger_description": "Run this skill when user asked to send message/email to the candidate which have accepted the offer letter you have send  personalized follow-ups and reminders.",
+  "references": {
+    "recipe_id": {
+      "type": "recipe",
+      "id": {
+        "zip_name": "PnT Genie/send_email_to_candidate.recipe.json",
+        "name": "Send Email to candidate",
+        "folder": "PnT Genie"
+      }
+    }
+  }
+}

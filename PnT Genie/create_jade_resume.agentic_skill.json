@@ -1,0 +1,14 @@
+{
+  "name": "Create Jade Resume",
+  "trigger_description": "When user ask to create jade standarized resume for a candidate you will extract all the details/inputs from the resume uploded for that candidate",
+  "references": {
+    "recipe_id": {
+      "type": "recipe",
+      "id": {
+        "zip_name": "PnT Genie/create_jade_resume.recipe.json",
+        "name": "Create Jade Resume",
+        "folder": "PnT Genie"
+      }
+    }
+  }
+}

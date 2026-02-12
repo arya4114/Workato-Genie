@@ -1,0 +1,14 @@
+{
+  "name": "Send Email To PnT",
+  "trigger_description": "When user ask  to send email him/her regarding candidate details not that candidate accepted offer letter.",
+  "references": {
+    "recipe_id": {
+      "type": "recipe",
+      "id": {
+        "zip_name": "PnT Genie/send_email_to_pnt.recipe.json",
+        "name": "Send Email To PnT",
+        "folder": "PnT Genie"
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "My DocuPanda account",
+  "provider": {
+    "zip_name": "docupanda.custom_adapter.json",
+    "name": "DocuPanda",
+    "folder": ""
+  },
+  "root_folder": false
+}

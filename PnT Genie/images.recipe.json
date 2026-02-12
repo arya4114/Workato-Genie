@@ -1,0 +1,104 @@
+{
+  "name": "images",
+  "description": "",
+  "version": 3,
+  "private": true,
+  "concurrency": 1,
+  "code": {
+    "number": 0,
+    "provider": "workato_files",
+    "name": "new_file",
+    "as": "fd93755c",
+    "keyword": "trigger",
+    "dynamicPickListSelection": {
+      "dir_path": {
+        "ids": [
+          "/",
+          "/Candidate Profiles"
+        ],
+        "titles": [
+          "Root directory",
+          "Candidate Profiles"
+        ]
+      }
+    },
+    "toggleCfg": {
+      "include_subdirs": true,
+      "dir_path": true
+    },
+    "input": {
+      "include_subdirs": "false",
+      "dir_path": "/Candidate Profiles"
+    },
+    "filter": {
+      "conditions": [
+        {
+          "operand": "is_true",
+          "lhs": "=[\"JPG\", \"JPEG\", \"PNG\", \"GIF\", \"WEBP\", \"TIFF\", \"HEIF\"].include?(_dp('{\"pill_type\":\"output\",\"provider\":\"workato_files\",\"line\":\"fd93755c\",\"path\":[\"name\"]}').split('.').last.upcase)",
+          "rhs": "",
+          "uuid": "66b26d28-3181-4cd9-beb4-2fe5b655696c"
+        }
+      ],
+      "operand": "and",
+      "type": "compound"
+    },
+    "block": [
+      {
+        "number": 1,
+        "provider": "open_ai_utility",
+        "name": "analyse_image",
+        "as": "57132d7d",
+        "keyword": "action",
+        "input": {
+          "_settings_version": "2",
+          "file_contents": "#{_dp('{\"pill_type\":\"output\",\"provider\":\"workato_files\",\"line\":\"fd93755c\",\"path\":[\"content\"]}')}",
+          "file_name": "#{_dp('{\"pill_type\":\"output\",\"provider\":\"workato_files\",\"line\":\"fd93755c\",\"path\":[\"name\"]}')}",
+          "question": "extract all the nessary details of candidate resume"
+        },
+        "uuid": "9b4b616f-af42-4ed5-a8b4-d32823c2c6ca"
+      },
+      {
+        "number": 2,
+        "provider": "workato_genie",
+        "name": "upsert_knowledge",
+        "as": "210b2ec9",
+        "keyword": "action",
+        "input": {
+          "knowledge_base_id": {
+            "zip_name": "PnT Genie/load_candidate_data.agentic_knowledge_base.json",
+            "name": "Load_Candidate_data",
+            "folder": "PnT Genie"
+          },
+          "documents": {
+            "doc_id": "=\"CP1\"+_dp('{\"pill_type\":\"output\",\"provider\":\"workato_files\",\"line\":\"fd93755c\",\"path\":[\"name\"]}')",
+            "title": "=\"CP\"+_dp('{\"pill_type\":\"output\",\"provider\":\"workato_files\",\"line\":\"fd93755c\",\"path\":[\"name\"]}')",
+            "body": "=_dp('{\"pill_type\":\"output\",\"provider\":\"open_ai_utility\",\"line\":\"57132d7d\",\"path\":[\"response\"]}').to_s"
+          }
+        },
+        "uuid": "cc5cf39e-cd06-4938-8308-483783f5ad0f"
+      }
+    ],
+    "uuid": "3ebc61e3-73f4-40cd-aa7a-23f75a49a414",
+    "unfinished": false
+  },
+  "config": [
+    {
+      "keyword": "application",
+      "provider": "workato_genie",
+      "skip_validation": false,
+      "account_id": null
+    },
+    {
+      "keyword": "application",
+      "provider": "workato_files",
+      "skip_validation": false,
+      "account_id": null
+    },
+    {
+      "keyword": "application",
+      "provider": "open_ai_utility",
+      "skip_validation": false,
+      "account_id": null
+    }
+  ]
+}

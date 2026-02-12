@@ -1,0 +1,14 @@
+{
+  "name": "Update Event in Google Calendar",
+  "trigger_description": "Run this Skill when user query requires updating of an existing event on Calendar",
+  "references": {
+    "recipe_id": {
+      "type": "recipe",
+      "id": {
+        "zip_name": "PnT Genie/update_event_in_google_calendar.recipe.json",
+        "name": "Update Event in Google Calendar",
+        "folder": "PnT Genie"
+      }
+    }
+  }
+}

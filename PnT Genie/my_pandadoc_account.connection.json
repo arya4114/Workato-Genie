@@ -1,0 +1,9 @@
+{
+  "name": "My Pandadoc account",
+  "provider": {
+    "zip_name": "pandadoc.custom_adapter.json",
+    "name": "Pandadoc",
+    "folder": ""
+  },
+  "root_folder": false
+}

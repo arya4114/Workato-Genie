@@ -1,0 +1,321 @@
+{
+  "name": "PDF",
+  "description": "",
+  "version": 4,
+  "private": true,
+  "concurrency": 1,
+  "code": {
+    "number": 0,
+    "provider": "workato_files",
+    "name": "new_file",
+    "as": "ad2e12a1",
+    "keyword": "trigger",
+    "dynamicPickListSelection": {
+      "dir_path": {
+        "ids": [
+          "/",
+          "/Candidate Profiles"
+        ],
+        "titles": [
+          "Root directory",
+          "Candidate Profiles"
+        ]
+      }
+    },
+    "toggleCfg": {
+      "include_subdirs": true,
+      "dir_path": true
+    },
+    "input": {
+      "include_subdirs": "false",
+      "dir_path": "/Candidate Profiles"
+    },
+    "block": [
+      {
+        "number": 1,
+        "keyword": "if",
+        "input": {
+          "type": "compound",
+          "operand": "and",
+          "conditions": [
+            {
+              "operand": "contains",
+              "lhs": "=_dp('{\"pill_type\":\"output\",\"provider\":\"workato_files\",\"line\":\"ad2e12a1\",\"path\":[\"name\"]}').downcase",
+              "rhs": "pdf",
+              "uuid": "7869c103-6324-49fb-b590-a2b6cbf017da"
+            }
+          ]
+        },
+        "block": [
+          {
+            "number": 2,
+            "provider": "workato_idp",
+            "name": "process_document",
+            "as": "4324d83d",
+            "keyword": "action",
+            "input": {
+              "document_type": "documents",
+              "_settings_version": "2",
+              "idp_version": "v2",
+              "file_contents": "#{_dp('{\"pill_type\":\"output\",\"provider\":\"workato_files\",\"line\":\"ad2e12a1\",\"path\":[\"content\"]}')}",
+              "file_name": "#{_dp('{\"pill_type\":\"output\",\"provider\":\"workato_files\",\"line\":\"ad2e12a1\",\"path\":[\"name\"]}')}",
+              "object_schema_documents": "[{\"name\":\"Name\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Name\"},{\"name\":\"Skills\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Skills\"},{\"name\":\"Exp_in_years\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Exp in years\",\"description\":\"Exp is Experience (IN YEARS) \"},{\"name\":\"Company\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Company\"},{\"name\":\"location\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Location\"},{\"name\":\"Experience_Summary\",\"type\":\"string\",\"optional\":false,\"description\":\"Where and how long the candidate has worked beofre\",\"control_type\":\"text\",\"label\":\"Experience summary\"},{\"name\":\"hobbies\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Hobbies\"},{\"name\":\"Education_Details\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Education details\"}]"
+            },
+            "extended_output_schema": [
+              {
+                "label": "Values",
+                "name": "values",
+                "properties": [
+                  {
+                    "control_type": "text",
+                    "label": "Name",
+                    "type": "string",
+                    "name": "Name"
+                  },
+                  {
+                    "control_type": "text",
+                    "label": "Skills",
+                    "type": "string",
+                    "name": "Skills"
+                  },
+                  {
+                    "control_type": "text",
+                    "label": "Exp in years",
+                    "description": "Exp is Experience (IN YEARS) ",
+                    "type": "string",
+                    "name": "Exp_in_years"
+                  },
+                  {
+                    "control_type": "text",
+                    "label": "Company",
+                    "type": "string",
+                    "name": "Company"
+                  },
+                  {
+                    "control_type": "text",
+                    "label": "Location",
+                    "type": "string",
+                    "name": "location"
+                  },
+                  {
+                    "control_type": "text",
+                    "label": "Experience summary",
+                    "description": "Where and how long the candidate has worked beofre",
+                    "type": "string",
+                    "name": "Experience_Summary"
+                  },
+                  {
+                    "control_type": "text",
+                    "label": "Hobbies",
+                    "type": "string",
+                    "name": "hobbies"
+                  },
+                  {
+                    "control_type": "text",
+                    "label": "Education details",
+                    "type": "string",
+                    "name": "Education_Details"
+                  }
+                ],
+                "type": "object"
+              },
+              {
+                "label": "Confidence scores",
+                "name": "confidence_scores",
+                "properties": [
+                  {
+                    "control_type": "number",
+                    "label": "Name",
+                    "parse_output": "float_conversion",
+                    "type": "number",
+                    "name": "Name"
+                  },
+                  {
+                    "control_type": "number",
+                    "label": "Skills",
+                    "parse_output": "float_conversion",
+                    "type": "number",
+                    "name": "Skills"
+                  },
+                  {
+                    "control_type": "number",
+                    "label": "Exp in years",
+                    "parse_output": "float_conversion",
+                    "description": "Exp is Experience (IN YEARS) ",
+                    "type": "number",
+                    "name": "Exp_in_years"
+                  },
+                  {
+                    "control_type": "number",
+                    "label": "Company",
+                    "parse_output": "float_conversion",
+                    "type": "number",
+                    "name": "Company"
+                  },
+                  {
+                    "control_type": "number",
+                    "label": "Location",
+                    "parse_output": "float_conversion",
+                    "type": "number",
+                    "name": "location"
+                  },
+                  {
+                    "control_type": "number",
+                    "label": "Experience summary",
+                    "parse_output": "float_conversion",
+                    "description": "Where and how long the candidate has worked beofre",
+                    "type": "number",
+                    "name": "Experience_Summary"
+                  },
+                  {
+                    "control_type": "number",
+                    "label": "Hobbies",
+                    "parse_output": "float_conversion",
+                    "type": "number",
+                    "name": "hobbies"
+                  },
+                  {
+                    "control_type": "number",
+                    "label": "Education details",
+                    "parse_output": "float_conversion",
+                    "type": "number",
+                    "name": "Education_Details"
+                  }
+                ],
+                "type": "object"
+              }
+            ],
+            "extended_input_schema": [
+              {
+                "control_type": "schema-designer",
+                "custom_properties": [
+                  {
+                    "name": "description",
+                    "label": "Description",
+                    "type": "string",
+                    "optional": true,
+                    "control_type": "plain-text"
+                  }
+                ],
+                "default": "[{\"name\":\"Name\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Name\"},{\"name\":\"Skills\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Skills\"},{\"name\":\"Exp_in_years\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Exp in years\",\"description\":\"Exp is Experience (IN YEARS) \"},{\"name\":\"Company\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Company\"},{\"name\":\"location\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Location\"},{\"name\":\"Experience_Summary\",\"type\":\"string\",\"optional\":false,\"description\":\"Where and how long the candidate has worked beofre\",\"control_type\":\"text\",\"label\":\"Experience summary\"},{\"name\":\"hobbies\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Hobbies\"},{\"name\":\"Education_Details\",\"type\":\"string\",\"optional\":false,\"control_type\":\"text\",\"label\":\"Education details\"}]",
+                "empty_schema_title": "Describe all fields in your response",
+                "exclude_fields": [
+                  "hint",
+                  "label"
+                ],
+                "exclude_fields_types": [
+                  "integer",
+                  "date",
+                  "date_time"
+                ],
+                "extends_schema": true,
+                "hint": "Enter the fields that you want to identify from the file contents. Add descriptions for extracting the fields.",
+                "label": "Fields to identify",
+                "name": "object_schema_documents",
+                "optional": false,
+                "sample_data_type": "json_http",
+                "type": "string",
+                "schema_neutral": true
+              },
+              {
+                "control_type": "select",
+                "default": "v2",
+                "hint": "Select the IDP version to use for processing the document. If not specified, the latest version will be used.",
+                "label": "IDP version",
+                "name": "idp_version",
+                "optional": false,
+                "override": true,
+                "pick_list": [
+                  [
+                    "OCR augmented LLM extraction",
+                    "v2"
+                  ]
+                ],
+                "sticky": true,
+                "type": "string"
+              }
+            ],
+            "uuid": "94075f55-d70a-40c8-a3e1-15b367afbfca"
+          }
+        ],
+        "uuid": "26b8c04b-d4d4-43b9-97cc-c182b035c3f6"
+      },
+      {
+        "number": 3,
+        "provider": "logger",
+        "name": "log_message",
+        "as": "de095f28",
+        "keyword": "action",
+        "input": {
+          "user_logs_enabled": "false",
+          "message": "=_dp('{\"pill_type\":\"output\",\"provider\":\"workato_idp\",\"line\":\"4324d83d\",\"path\":[\"values\"]}').to_s"
+        },
+        "extended_input_schema": [
+          {
+            "control_type": "switch",
+            "default": false,
+            "disable_formula": true,
+            "extends_schema": true,
+            "hint": "                Send a copy of the message to Workato logs.\n                <a href=\"https://docs.workato.com/features/logging-service.html\" target=\"_blank\" class=\"ng-scope\">\n                  Learn more\n                </a>\n",
+            "label": "Send to Workato log service",
+            "name": "user_logs_enabled",
+            "optional": true,
+            "type": "string"
+          }
+        ],
+        "uuid": "d4ebf0fe-bc8c-4be1-a15f-3aded4612422"
+      },
+      {
+        "number": 4,
+        "provider": "workato_genie",
+        "name": "upsert_knowledge",
+        "as": "9d073fd9",
+        "keyword": "action",
+        "dynamicPickListSelection": {
+          "knowledge_base_id": "Load_Candidate_data"
+        },
+        "input": {
+          "knowledge_base_id": {
+            "zip_name": "PnT Genie/load_candidate_data.agentic_knowledge_base.json",
+            "name": "Load_Candidate_data",
+            "folder": "PnT Genie"
+          },
+          "documents": {
+            "doc_id": "=\"LC1\"+_dp('{\"pill_type\":\"output\",\"provider\":\"workato_files\",\"line\":\"ad2e12a1\",\"path\":[\"name\"]}')",
+            "title": "=\"LC\"+_dp('{\"pill_type\":\"output\",\"provider\":\"workato_files\",\"line\":\"ad2e12a1\",\"path\":[\"name\"]}')",
+            "body": "#{_dp('{\"pill_type\":\"output\",\"provider\":\"logger\",\"line\":\"de095f28\",\"path\":[\"message\"]}')}"
+          }
+        },
+        "uuid": "839f3be3-7b32-435b-921b-5f8bb9541e71"
+      }
+    ],
+    "uuid": "1bc7251e-2d82-423b-8762-b08e39132d4b",
+    "unfinished": false
+  },
+  "config": [
+    {
+      "keyword": "application",
+      "provider": "workato_files",
+      "skip_validation": false,
+      "account_id": null
+    },
+    {
+      "keyword": "application",
+      "provider": "workato_idp",
+      "skip_validation": false,
+      "account_id": null
+    },
+    {
+      "keyword": "application",
+      "provider": "logger",
+      "skip_validation": false,
+      "account_id": null
+    },
+    {
+      "keyword": "application",
+      "provider": "workato_genie",
+      "skip_validation": false,
+      "account_id": null
+    }
+  ]
+}

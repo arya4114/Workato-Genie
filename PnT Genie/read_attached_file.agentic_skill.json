@@ -1,0 +1,14 @@
+{
+  "name": "Read attached file",
+  "trigger_description": "Run this skill everytime when user ask to screen a resume for the provided Job Description.",
+  "references": {
+    "recipe_id": {
+      "type": "recipe",
+      "id": {
+        "zip_name": "PnT Genie/read_attached_file.recipe.json",
+        "name": "Read attached file",
+        "folder": "PnT Genie"
+      }
+    }
+  }
+}

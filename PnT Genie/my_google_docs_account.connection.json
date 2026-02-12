@@ -1,0 +1,9 @@
+{
+  "name": "My Google Docs account",
+  "provider": {
+    "zip_name": "google_docs.custom_adapter.json",
+    "name": "Google Docs",
+    "folder": ""
+  },
+  "root_folder": false
+}
