@@ -1,0 +1,8 @@
+{
+  "title": "Google Docs",
+  "description": "[Google Docs](https://www.google.com/docs/about/) is a web-based word processing application developed by Google. It allows users to create, edit, and share documents online, and it supports real-time collaboration, enabling multiple users to work on the same document simultaneously. \r\n\r\n## What can you do with this connector\r\n- Create a document from template for Onboarding employees in HR system\r\n- Create a document from text extracted from on-premise CSV files\r\n- Update an existing document whenever a change request has been approved in ticketing system\r\n\r\n## Objects this connector supports\r\n- Document\r\n\r\n## Support\r\n\r\nThis connector was built and is supported by Workato. Send all your bug reports through our support channels, found [here](https://docs.workato.com/contact-us.html#for-reporting-bugs). Let our support team know the name of this connector and that it was installed from the community so they can route your support tickets properly. To request enhancements, use the following [link](https://docs.workato.com/contact-us.html#for-requesting-enhancements) and select your region’s data center. ",
+  "logo_file_name": "google-docs-icon.png",
+  "logo_content_type": "image/png",
+  "version_no": 1,
+  "note": "Installed from community"
+}
