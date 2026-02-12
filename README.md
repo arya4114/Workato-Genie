@@ -2,7 +2,7 @@
 
 ## Overview
 
-**PnT Genie** is an intelligent, autonomous AI assistant designed to streamline hiring workflows by automatically analyzing resumes against job descriptions (JDs), generating structured evaluations, extracting candidate information, and supporting interview scheduling.
+**PnT Genie** (People and Talent) is an intelligent, autonomous AI assistant designed to streamline hiring workflows by automatically analyzing resumes against job descriptions (JDs), generating structured evaluations, extracting candidate information, and supporting interview scheduling.
 
 The goal is to help recruiters and hiring managers make faster, data-driven decisions while maintaining transparency, consistency, and clear justification in every evaluation.
 
