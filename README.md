@@ -1,4 +1,4 @@
-# 🧠 PnT Genie - Intelligent Recruitment Assistant
+# 🧠🧞 PnT Genie - Intelligent Recruitment Assistant
 
 ## Overview
 
@@ -22,7 +22,7 @@ It reduces manual screening effort while ensuring standardized candidate evaluat
 
 ## Core Capabilities
 
-### 📄 Resume vs JD Evaluation
+### Resume vs JD Evaluation
 
 When a resume is uploaded:
 
@@ -36,7 +36,7 @@ This ensures every hiring decision is transparent and structured.
 
 ---
 
-### 📊 Candidate Data Extraction
+### Candidate Data Extraction
 
 PnT Genie extracts and standardizes:
 
@@ -53,13 +53,13 @@ If data is missing, it clearly reports **“Not Found”** instead of guessing.
 
 ---
 
-### 📧 Automated Notifications
+### Automated Notifications
 
 High-scoring candidates trigger summarized notifications for HR to accelerate shortlisting and next steps.
 
 ---
 
-### 📅 Interview Scheduling
+### Interview Scheduling
 
 When requested:
 
@@ -71,19 +71,19 @@ Scheduling is only triggered intentionally to avoid unwanted automation.
 
 ---
 
-### 🔄 Standardized Resume Conversion
+### Standardized Resume Conversion
 
 PnT Genie can convert resumes into a **Jade standardized format**, automatically transforming email addresses into:
 
 ```
-firstname.lastname@jadeglobal.com
+firstname.lastname@gmail.com
 ```
 
 This maintains consistent internal documentation.
 
 ---
 
-### 💬 Intelligent User Interaction
+### Intelligent User Interaction
 
 PnT Genie can answer questions such as:
 
@@ -141,11 +141,11 @@ Candidate Evaluation Report
 
 Hiring workflows often suffer from inconsistency, bias, and time pressure. PnT Genie introduces:
 
-✅ Standardized evaluations
-✅ Transparent decision-making
-✅ Faster candidate screening
-✅ Automated administrative tasks
-✅ Improved recruiter efficiency
+→ Standardized evaluations
+→ Transparent decision-making
+→ Faster candidate screening
+→ Automated administrative tasks
+→ Improved recruiter efficiency
 
 ---
 
